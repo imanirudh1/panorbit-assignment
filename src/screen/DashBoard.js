@@ -6,16 +6,16 @@ import ProfileScreen from './ProfileScreen'
 import SideBar from './SideBar'
 import ToDo from './ToDo'
 
-const DashBoard = () => {
+const DashBoard = ({ match }) => {
   return (
     <>
       <div className='wrapper'>
-        <SideBar />
+        <SideBar match={match} />
         <Switch>
-          <Route path='/dashboard/gallery' component={Gallery} />
-          <Route path='/dashboard/todo' component={ToDo} />
-          <Route path='/dashboard/post' component={Posts} />
-          <Route path='/dashboard' component={ProfileScreen} />
+          <Route path='/dashboard/:id/gallery' component={Gallery} />
+          <Route path='/dashboard/:id/todo' component={ToDo} />
+          <Route path='/dashboard/:id/post' component={Posts} />
+          <Route path='/dashboard/:id' component={ProfileScreen} />
         </Switch>
       </div>
       <div className='chat-box'>Chats</div>

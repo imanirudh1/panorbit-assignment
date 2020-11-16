@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const SideBar = () => {
+const SideBar = ({ match }) => {
   return (
     <div className='sidebar'>
       <div className='sidebar-items'>
-        <Link className='link lin' to='/dashboard/profile'>
+        <Link className='link lin' to={`/dashboard/${match.params.id}/profile`}>
           <div className='sidebar-item'>Profile</div>
         </Link>
-        <Link className='link' to='/dashboard/post'>
+        <Link className='link' to={`/dashboard/${match.params.id}/post`}>
           <div className='sidebar-item '>Posts</div>
         </Link>
-        <Link className='link' to='/dashboard/gallery'>
+        <Link className='link' to={`/dashboard/${match.params.id}/gallery`}>
           <div className='sidebar-item'>Gallery</div>
         </Link>
-        <Link className='link' to='/dashboard/todo'>
+        <Link className='link' to={`/dashboard/${match.params.id}/todo`}>
           <div className='sidebar-item bottom'>ToDo</div>
         </Link>
       </div>
