@@ -74,7 +74,7 @@ const ProfileScreen = ({ match }) => {
       </div>
       <div className='profile-body'>
         <div className='profile-details'>
-          <img src={usr.profilepicture} />
+          <img alt='Profile' src={usr.profilepicture} />
           <div className='second m-2'>{usr.name}</div>
           <div className='account-details'>
             <div className='first'>Username </div>
