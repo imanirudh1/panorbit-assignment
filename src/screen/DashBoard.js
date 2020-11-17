@@ -24,11 +24,8 @@ const DashBoard = ({ match }) => {
           <Route path='/dashboard/:id/post' component={Posts} />
           <Route path='/dashboard/:id' component={ProfileScreen} />
         </Switch>
-        <div
-          onClick={() => setChatBox(!chatBox)}
-          className={!chatBox ? 'chat-box' : 'active-chat-box'}
-        >
-          <div className='chat-header'>
+        <div className={!chatBox ? 'chat-box' : 'active-chat-box'}>
+          <div onClick={() => setChatBox(!chatBox)} className='chat-header'>
             <div className='chat-header-left'>
               <BsChatSquare className='icon' />
               <label>Chats</label>

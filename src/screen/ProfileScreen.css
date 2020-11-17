@@ -308,3 +308,13 @@
 .active {
   color: #ffffff;
 }
+
+.chat-screen {
+  position: fixed;
+  height: 250px;
+  width: 200px;
+  bottom: 0px;
+  right: 400px;
+  transform: translateY(38px);
+  background-color: #6b6dd7;
+}
