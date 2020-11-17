@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import GoogleMapReact from 'google-map-react'
 import './ProfileScreen.css'
 const ProfileScreen = ({ match }) => {
   const userList = useSelector((state) => state.userList)
   const { loading, user, error } = userList
   const usr = user[match.params.id - 1]
+  const center = { lat: usr.address.geo.lat, lng: usr.address.geo.lng }
   return (
     <div className='screen-container'>
       <div className='screen-header'>
@@ -55,7 +56,7 @@ const ProfileScreen = ({ match }) => {
         </div>
         <div className='profile-address'>
           <div className='first m-2 m'>Address :</div>
-          <div className='account-details address-details'>
+          <div className='account-details'>
             <div className='first'>Street</div>
             <label>: </label>
             <label className='second'>{usr.address.street} </label>
@@ -68,6 +69,26 @@ const ProfileScreen = ({ match }) => {
             <div className='first'>Zipcode</div>
             <label>: </label>
             <label className='second'>{usr.address.zipcode} </label>
+          </div>
+          <div className='address-map'>
+            <GoogleMapReact
+              bootstrapURLKeys={{}}
+              defaultCenter={{
+                lat: 59.95,
+                lng: 30.33,
+              }}
+              defaultZoom={11}
+            ></GoogleMapReact>
+          </div>
+          <div className='map-location'>
+            <div className='lat'>
+              <label className='first'>Lat:</label>
+              <label className='second'> {usr.address.geo.lat}</label>
+            </div>
+            <div className='lng'>
+              <label className='first'>Long: </label>
+              <label className='second'>{usr.address.geo.lng}</label>
+            </div>
           </div>
         </div>
       </div>
