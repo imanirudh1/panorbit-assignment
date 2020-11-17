@@ -233,6 +233,7 @@
   position: fixed;
   bottom: 0px;
   right: 150px;
+  z-index: 16;
   height: 40px;
   width: 240px;
   margin-bottom: 10px;
@@ -241,7 +242,7 @@
 }
 .active-chat-box .chat-user {
   display: flex;
-  z-index: 16;
+
   background-color: #ffffff;
   height: 300px;
   border: 1px solid #2b65c8;
