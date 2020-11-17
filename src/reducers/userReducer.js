@@ -2,9 +2,6 @@ import {
   USER_LIST_REQUEST,
   USER_LIST_FAIL,
   USER_LIST_SUCCESS,
-  USER_DETAILS_REQUEST,
-  USER_DETAILS_SUCCESS,
-  USER_DETAILS_FAIL,
 } from '../constants/userConstants'
 export const UserListReducer = (state = { user: [] }, action) => {
   switch (action.type) {
