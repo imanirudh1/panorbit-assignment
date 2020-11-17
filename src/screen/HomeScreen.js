@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
-import './HomeScreen.css'
 import { Scrollbars } from 'react-custom-scrollbars'
+import './HomeScreen.css'
 import { Link } from 'react-router-dom'
 import { listUsers } from '../actions/userAction'
 const HomeScreen = () => {

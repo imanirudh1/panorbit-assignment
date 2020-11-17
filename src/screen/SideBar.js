@@ -5,7 +5,7 @@ const SideBar = ({ match }) => {
     <div className='sidebar'>
       <div className='sidebar-items'>
         <Link className='link lin' to={`/dashboard/${match.params.id}/profile`}>
-          <div className='sidebar-item'>Profile</div>
+          <div className='sidebar-item  active'>Profile</div>
         </Link>
         <Link className='link' to={`/dashboard/${match.params.id}/post`}>
           <div className='sidebar-item '>Posts</div>

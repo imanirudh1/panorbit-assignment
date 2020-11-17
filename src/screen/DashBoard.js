@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Gallery from './Gallery'
 import Posts from './Posts'
 import ProfileScreen from './ProfileScreen'
 import SideBar from './SideBar'
 import ToDo from './ToDo'
-import { GrChat } from 'react-icons/gr'
+import { useSelector } from 'react-redux'
+import { Scrollbars } from 'react-custom-scrollbars'
+import { BsChatSquare } from 'react-icons/bs'
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 const DashBoard = ({ match }) => {
   const [chatBox, setChatBox] = useState(false)
+  const userList = useSelector((state) => state.userList)
+  const { user } = userList
   return (
     <>
       <div className='wrapper'>
@@ -24,10 +29,36 @@ const DashBoard = ({ match }) => {
           className={!chatBox ? 'chat-box' : 'active-chat-box'}
         >
           <div className='chat-header'>
-            <GrChat color='pinks' />
-            Chats
+            <div className='chat-header-left'>
+              <BsChatSquare className='icon' />
+              <label>Chats</label>
+            </div>
+            <div className='chat-header-right'>
+              {chatBox ? (
+                <IoIosArrowDown className='icon' />
+              ) : (
+                <IoIosArrowUp className='icon' />
+              )}
+            </div>
           </div>
-          <div className='chat-user'>hiiiii</div>
+          <div className='chat-user'>
+            <Scrollbars style={{ height: 300 }}>
+              {user.map((item) => (
+                <div className='chat-users' key={item.id}>
+                  <div className='chat-left'>
+                    <img
+                      src={item.profilepicture}
+                      alt='Profile'
+                      className='chat-user-image'
+                    />
+                    <li key={item.id}>{item.name}</li>
+                  </div>
+
+                  <div className='online'></div>
+                </div>
+              ))}
+            </Scrollbars>
+          </div>
         </div>
       </div>
     </>

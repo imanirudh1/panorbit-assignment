@@ -29,7 +29,7 @@
 }
 .sidebar-item {
   width: 170px;
-  color: whitesmoke;
+  color: #9691ed;
   padding-bottom: 11px;
   padding-top: 11px;
   border-bottom: 2px solid #6b6dd7;
@@ -55,18 +55,93 @@
   align-items: center;
 }
 .user-name {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
   font-size: 18px;
   font-weight: 600;
+  position: relative;
 }
 .user-name img {
   height: 35px;
   width: 35px;
   border-radius: 50%;
   margin-right: 10px;
+}
+.popup {
+  position: absolute;
+  height: 350px;
+  width: 260px;
+  transform: translateY(210px);
+  z-index: 15;
+  border-radius: 20px;
+  background-color: #fefeff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.253);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.popup img {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  height: 80px;
+  width: 80px;
+}
+.popup .second {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.popup .first {
+  font-size: 15px;
+}
+.popup-none {
+  display: none;
+}
+.next-users {
+  background-color: #ffffff;
+  height: 100px;
+  width: 200px;
+  margin-top: 5px;
+}
+.next-user img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next-user .second {
+  font-size: 15px;
+  padding-top: 10px;
+}
+.next-item {
+  display: flex;
+}
+.next-user {
+  border-top: 2px solid #5454541e;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: -20px;
+  margin-bottom: 10px;
+}
+.next-user .next-user-img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%s;
+}
+.sign-out {
+  background-color: #d55051;
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 19px;
+  font-size: 16px;
+  margin-top: 20px;
 }
 .other-screen {
   display: flex;
@@ -166,6 +241,7 @@
 }
 .active-chat-box .chat-user {
   display: flex;
+  z-index: 16;
   background-color: #ffffff;
   height: 300px;
   border: 1px solid #2b65c8;
@@ -219,12 +295,16 @@
   margin-left: 15px;
 }
 .online {
-  height: 10px;
-  width: 10px;
-  background-color: green;
+  height: 7px;
+  width: 7px;
+  background-color: rgb(11, 184, 11);
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   border-radius: 50%;
   margin-right: 15px;
+  margin-top: 5px;
+}
+.active {
+  color: #ffffff;
 }
