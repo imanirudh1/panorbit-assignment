@@ -1,21 +1,63 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { IoIosArrowForward } from 'react-icons/io'
 const SideBar = ({ match }) => {
   return (
     <div className='sidebar'>
       <div className='sidebar-items'>
-        <Link className='link lin' to={`/dashboard/${match.params.id}/profile`}>
-          <div className='sidebar-item  active'>Profile</div>
-        </Link>
-        <Link className='link' to={`/dashboard/${match.params.id}/post`}>
-          <div className='sidebar-item '>Posts</div>
-        </Link>
-        <Link className='link' to={`/dashboard/${match.params.id}/gallery`}>
-          <div className='sidebar-item'>Gallery</div>
-        </Link>
-        <Link className='link' to={`/dashboard/${match.params.id}/todo`}>
-          <div className='sidebar-item bottom'>ToDo</div>
-        </Link>
+        {' '}
+        <div className='sidebar-item'>
+          <NavLink
+            activeClassName='selected'
+            className='sidebar-item'
+            activeClassName='selected'
+            to={`/dashboard/${match.params.id}/profile`}
+          >
+            Profile
+            <div className='active-sym'>
+              {' '}
+              <IoIosArrowForward className='icon2' />
+            </div>
+          </NavLink>{' '}
+        </div>
+        <div className='sidebar-item '>
+          <NavLink
+            activeClassName='selected'
+            className='sidebar-item'
+            to={`/dashboard/${match.params.id}/post`}
+          >
+            Posts
+            <div className='active-sym'>
+              {' '}
+              <IoIosArrowForward className='icon2' />
+            </div>
+          </NavLink>
+        </div>{' '}
+        <div className='sidebar-item'>
+          <NavLink
+            activeClassName='selected'
+            className='sidebar-item'
+            to={`/dashboard/${match.params.id}/gallery`}
+          >
+            Gallery
+            <div className='active-sym'>
+              {' '}
+              <IoIosArrowForward className='icon2' />
+            </div>
+          </NavLink>
+        </div>{' '}
+        <div className='sidebar-item bottom'>
+          <NavLink
+            activeClassName='selected'
+            className='sidebar-item bottom'
+            to={`/dashboard/${match.params.id}/todo`}
+          >
+            ToDo
+            <div className='active-sym'>
+              <IoIosArrowForward className='icon2' />
+            </div>
+          </NavLink>
+        </div>
       </div>
     </div>
   )
