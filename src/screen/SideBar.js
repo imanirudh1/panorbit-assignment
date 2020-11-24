@@ -16,6 +16,7 @@ const SideBar = ({ match }) => {
             <div className='active-sym'>
               {' '}
               <IoIosArrowForward className='icon2' />
+              <div className='sr'></div>
             </div>
           </NavLink>{' '}
         </div>
@@ -28,7 +29,7 @@ const SideBar = ({ match }) => {
             Posts
             <div className='active-sym'>
               {' '}
-              <IoIosArrowForward className='icon2' />
+              <IoIosArrowForward className='icon2' /> <div className='sr'></div>
             </div>
           </NavLink>
         </div>{' '}
@@ -41,7 +42,7 @@ const SideBar = ({ match }) => {
             Gallery
             <div className='active-sym'>
               {' '}
-              <IoIosArrowForward className='icon2' />
+              <IoIosArrowForward className='icon2' /> <div className='sr'></div>
             </div>
           </NavLink>
         </div>{' '}
@@ -53,7 +54,7 @@ const SideBar = ({ match }) => {
           >
             ToDo
             <div className='active-sym'>
-              <IoIosArrowForward className='icon2' />
+              <IoIosArrowForward className='icon2' /> <div className='sr'></div>
             </div>
           </NavLink>
         </div>
