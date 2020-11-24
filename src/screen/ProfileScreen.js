@@ -112,7 +112,7 @@ const ProfileScreen = ({ match }) => {
         </div>
         <div className='profile-address'>
           <div className='first m-2 m'>Address :</div>
-          <div className='account-details'>
+          <div className='address-details'>
             <div className='first'>Street</div>
             <label>: </label>
             <label className='second'>{usr.address.street} </label>
