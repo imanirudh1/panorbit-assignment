@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import Gallery from './Gallery'
 import ProfileScreen from './ProfileScreen'
 import Posts from './Posts'
@@ -22,7 +22,8 @@ const DashBoard = ({ match }) => {
           <Route path='/dashboard/:id/gallery' component={Gallery} />
           <Route path='/dashboard/:id/todo' component={ToDo} />
           <Route path='/dashboard/:id/post' component={Posts} />
-          <Route path='/dashboard/:id' component={ProfileScreen} />
+          <Route path='/dashboard/:id/profile' component={ProfileScreen} />
+          <Redirect to='/dashboard/:id/profile' />
         </Switch>
         <div className={!chatBox ? 'chat-box' : 'active-chat-box'}>
           <div onClick={() => setChatBox(!chatBox)} className='chat-header'>
@@ -39,7 +40,7 @@ const DashBoard = ({ match }) => {
             </div>
           </div>
           <div className='chat-user'>
-            <Scrollbars style={{ height: 300 }}>
+            <Scrollbars style={{ height: 230 }}>
               {user.map((item) => (
                 <div className='chat-users' key={item.id}>
                   <div className='chat-left'>
