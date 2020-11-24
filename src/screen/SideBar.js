@@ -8,7 +8,6 @@ const SideBar = ({ match }) => {
         {' '}
         <div className='sidebar-item'>
           <NavLink
-            activeClassName='selected'
             className='sidebar-item'
             activeClassName='selected'
             to={`/dashboard/${match.params.id}/profile`}
