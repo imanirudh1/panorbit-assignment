@@ -390,3 +390,25 @@
   font-size: 23px;
   margin-left: 8px;
 }
+.sr {
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-right-color: #ffffff;
+  top: -31px;
+  left: -4px;
+  transform: rotate(45deg);
+}
+.sr:after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  top: 30px;
+  left: 30px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top-color: #ffffff;
+}
